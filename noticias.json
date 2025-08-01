@@ -1,0 +1,43 @@
+  [
+  
+  {
+    "id": "1",
+    "titulo": "Las acciones tecnológicas experimentan un fuerte crecimiento",
+    "extracto": "Un informe reciente destaca el aumento en la inversión y los resultados positivos en el sector tecnológico, impulsando los mercados.",
+    "url": "https://ejemplo.com/noticia-tech-crecimiento",
+    "fecha": "2024-07-29",
+    "sentimiento": ""
+  },
+  {
+    "id": "2",
+    "titulo": "El IPC se dispara y genera incertidumbre en los mercados",
+    "extracto": "La inflación supera las previsiones, provocando una caída en los principales índices bursátiles y preocupación entre los inversores.",
+    "url": "https://ejemplo.com/noticia-ipc-sube",
+    "fecha": "2024-07-28",
+    "sentimiento": ""
+  },
+  {
+    "id": "3",
+    "titulo": "Banco Central Europeo mantiene tipos de interés estables",
+    "extracto": "Tras su reunión, el BCE decide no modificar los tipos de interés, en línea con las expectativas del mercado para este trimestre.",
+    "url": "https://ejemplo.com/noticia-bce-estable",
+    "fecha": "2024-07-27",
+    "sentimiento": ""
+  },
+  {
+    "id": "4",
+    "titulo": "Empresas de energía renovable anuncian inversiones masivas",
+    "extracto": "Grandes compañías del sector energético destinan miles de millones a proyectos solares y eólicos, augurando un futuro brillante.",
+    "url": "https://ejemplo.com/noticia-energia-renovable",
+    "fecha": "2024-07-26",
+    "sentimiento": ""
+  },
+  {
+    "id": "5",
+    "titulo": "Advertencia de recesión económica en el próximo trimestre",
+    "extracto": "Analistas financieros alertan sobre indicadores económicos que sugieren una posible contracción, lo que genera cautela en los mercados.",
+    "url": "https://ejemplo.com/noticia-recesion-advertencia",
+    "fecha": "2024-07-25",
+    "sentimiento": ""
+  }
+  ]

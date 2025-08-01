@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador de Noticias Financieras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Noticias Financieras y Sentimientos de Mercado</h1>
+  </header>
+  <main>
+    <section id="noticias-feed">
+      <h2>Últimas Noticias</h2>
+      <div id="lista-noticias">
+      </div>
+    </section>
+    <section id="visualizacion-sentimiento">
+      <h2>Sentimineto General del Mercado</h2>
+      <div class="chart-container">
+      <canvas id="sentimientoChart"></canvas>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy;2024 Mauricio Oliveira - Proyecto Personal</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+  

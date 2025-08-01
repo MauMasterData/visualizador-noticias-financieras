@@ -1,0 +1,132 @@
+body{
+    font-family: Arial, sans-serif; 
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+}
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+main{
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+#noticias-feed, #visualizacion-sentimiento {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); 
+}
+h2{
+    color: #2980b9;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.noticia-item{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #fafafa;
+}
+.noticia-item h3 {
+    color: #34495e;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.noticia-item p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+.noticia-item a {
+    color: #2980b9;
+    text-decoration: none;
+}
+.noticia-item a:hover { 
+    text-decoration: underline;
+}
+.badge-positivo{
+    background-color: #27ae60;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+.badge-negativo{
+    background-color: #e74c3c; /* Rojo */
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.badge-neutral {
+    background-color: #f39c12; /* Naranja */
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+/* --- NUEVOS ESTILOS PARA EL GRÁFICO --- */
+#sentimientoChart { 
+    display: block;
+    margin: 0 auto; 
+}
+
+/* Opcional: Dale una altura mínima al contenedor del gráfico si es necesario */
+#visualizacion-sentimiento {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    min-height: 350px; /
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start; 
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden; 
+    box-sizing: border-box;
+}
+
+.chart-container {
+    position: relative; /* ¡CRUCIAL para Chart.js! */
+    width: 100%; /* Ocupa el 100% del ancho de su padre (max 400px) */
+    max-width: 350px; /* Limita el ancho del contenedor del gráfico */
+    height: 300px; /* ¡Altura fija y estricta para el contenedor del gráfico! */
+    margin-top: 15px; /* Espacio superior, si lo quieres */
+    margin-bottom: 15px; /* Espacio inferior, si lo quieres *
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #2c3e50;
+    color: white;
+    font-size: 0.8em;
+}
+
+/* Responsive Design (Básico) */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr; /* Una sola columna en móviles */
+    }
+}
