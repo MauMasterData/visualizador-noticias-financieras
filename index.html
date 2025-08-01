@@ -4,28 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualizador de Noticias Financieras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <header>
-    <h1>Noticias Financieras y Sentimientos de Mercado</h1>
-  </header>
-  <main>
-    <section id="noticias-feed">
-      <h2>Últimas Noticias</h2>
-      <div id="lista-noticias">
-      </div>
-    </section>
-    <section id="visualizacion-sentimiento">
-      <h2>Sentimineto General del Mercado</h2>
-      <div class="chart-container">
-      <canvas id="sentimientoChart"></canvas>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <p>&copy;2024 Mauricio Oliveira - Proyecto Personal</p>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="script.js"></script>
+
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <header class="bg-dark text-white text-center py-4">
+        <h1 class="mb-0">Noticias Financieras y Sentimiento de Mercado</h1>
+    </header>
+
+    <main class="container my-4">
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Filtros y Búsqueda</h5>
+                        <form id="filtro-form">
+                            <div class="input-group mb-3">
+                                <input type="text" id="busqueda-input" class="form-control" placeholder="Buscar por palabra clave...">
+                                <button class="btn btn-primary" type="submit" id="buscar-btn">Buscar</button>
+                            </div>
+                            <div class="btn-group w-100" role="group" aria-label="Filtro por sentimiento">
+                                <button type="button" class="btn btn-outline-secondary active" data-sentimiento="todos">Todos</button>
+                                <button type="button" class="btn btn-outline-success" data-sentimiento="muy positivo">Muy Positivo</button>
+                                <button type="button" class="btn btn-outline-success" data-sentimiento="positivo">Positivo</button>
+                                <button type="button" class="btn btn-outline-warning" data-sentimiento="neutral">Neutral</button>
+                                <button type="button" class="btn btn-outline-danger" data-sentimiento="negativo">Negativo</button>
+                                <button type="button" class="btn btn-outline-danger" data-sentimiento="muy negativo">Muy Negativo</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card shadow-sm mb-4 h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Últimas Noticias</h5>
+                        <div id="lista-noticias" class="flex-grow-1 overflow-auto news-list-container">
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm mb-4 h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Sentimiento General del Mercado</h5>
+                        <div class="chart-container flex-grow-1 d-flex justify-content-center align-items-center">
+                            <canvas id="sentimientoChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <section id="mercado-real-time" class="col-12 mt-4">
+                <h2 class="text-center mb-4">Rendimiento de los Principales Mercados Mundiales</h2>
+                <div id="mercado-graficos-container" class="row g-4">
+                    </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <p class="mb-0">&copy; 2024 Mauricio Oliveira - Proyecto Personal</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
   

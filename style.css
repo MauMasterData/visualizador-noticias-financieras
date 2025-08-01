@@ -1,132 +1,193 @@
-body{
-    font-family: Arial, sans-serif; 
+/*
+ * -------------------------------------------------------------
+ * Hoja de Estilos Principal - Visualizador Financiero
+ * Autor: Mauricio Oliveira
+ * Descripción: Estilos para un layout moderno y responsivo
+ * usando CSS puro, sin frameworks.
+ * -------------------------------------------------------------
+ */
+
+/* 1. Variables CSS: Una buena práctica para mantener el diseño */
+:root {
+    --color-principal: #2c3e50; /* Azul oscuro para headers y títulos */
+    --color-secundario: #34495e; /* Gris oscuro para el texto */
+    --color-acento: #2980b9; /* Azul claro para enlaces */
+    --color-fondo: #f4f7f6; /* Gris muy claro para el fondo */
+    --color-card-fondo: #fff; /* Blanco para las tarjetas */
+    --color-borde: #ddd; /* Borde gris claro para elementos */
+    --sombra-card: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil para las tarjetas */
+    --espaciado-medio: 1.5rem;
+    --espaciado-grande: 2rem;
+}
+
+/* 2. Estilos Globales y de la Estructura Principal */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f7f6;
-    color: #333;
+    background-color: var(--color-fondo);
+    color: var(--color-secundario);
+    min-height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+    display: flex;
+    flex-direction: column; /* Apila el header, main y footer */
 }
-header {
-    background-color: #2c3e50;
+
+h1, h2, h3, h5 {
+    color: var(--color-principal);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.main-header, .main-footer {
+    background-color: var(--color-principal);
     color: white;
-    padding: 1em 0;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 0;
 }
-main{
+
+.main-header h1 { font-size: 2rem; }
+
+.main-container {
     max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-}
-#noticias-feed, #visualizacion-sentimiento {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); 
-}
-h2{
-    color: #2980b9;
-    border-bottom: 2px solid #ecf0f1;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-.noticia-item{
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 15px;
-    background-color: #fafafa;
-}
-.noticia-item h3 {
-    color: #34495e;
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-.noticia-item p {
-    font-size: 0.95em;
-    line-height: 1.5;
-    margin-bottom: 10px;
-}
-.noticia-item a {
-    color: #2980b9;
-    text-decoration: none;
-}
-.noticia-item a:hover { 
-    text-decoration: underline;
-}
-.badge-positivo{
-    background-color: #27ae60;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.8em;
-    font-weight: bold;
-}
-.badge-negativo{
-    background-color: #e74c3c; /* Rojo */
-    color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.8em;
-    font-weight: bold;
-}
-
-.badge-neutral {
-    background-color: #f39c12; /* Naranja */
-    color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.8em;
-    font-weight: bold;
-}
-
-/* --- NUEVOS ESTILOS PARA EL GRÁFICO --- */
-#sentimientoChart { 
-    display: block;
-    margin: 0 auto; 
-}
-
-/* Opcional: Dale una altura mínima al contenedor del gráfico si es necesario */
-#visualizacion-sentimiento {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    min-height: 350px; /
-    display: flex; 
+    width: 90%; /* Para que sea responsive */
+    margin: 2rem auto;
+    flex: 1; /* Ocupa todo el espacio vertical disponible */
+    display: flex;
     flex-direction: column;
-    align-items: center; 
-    justify-content: flex-start; 
-    position: relative;
+    gap: 2rem; /* Espacio entre secciones */
+}
+
+/* 3. Estilos de los Componentes (Tarjetas y Elementos) */
+.card-style {
+    background-color: var(--color-card-fondo);
+    padding: var(--espaciado-medio);
+    border-radius: 8px;
+    box-shadow: var(--sombra-card);
+}
+
+.card-style h2, .main-container h2 {
+    border-bottom: 2px solid var(--color-borde);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* 4. Layout de las secciones principales (Noticias y Sentimiento) */
+.top-row-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2/3 para noticias, 1/3 para el gráfico de sentimiento */
+    gap: 2rem; /* Espacio entre las columnas */
+}
+
+/* 5. Estilos de los Filtros y Búsqueda */
+.filtro-container {
+    background-color: var(--color-card-fondo);
+    padding: var(--espaciado-medio);
+    border-radius: 8px;
+    box-shadow: var(--sombra-card);
+    margin-bottom: 2rem;
+}
+.filtro-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.input-group {
+    display: flex;
     width: 100%;
-    max-width: 400px;
-    overflow: hidden; 
-    box-sizing: border-box;
 }
-
-.chart-container {
-    position: relative; /* ¡CRUCIAL para Chart.js! */
-    width: 100%; /* Ocupa el 100% del ancho de su padre (max 400px) */
-    max-width: 350px; /* Limita el ancho del contenedor del gráfico */
-    height: 300px; /* ¡Altura fija y estricta para el contenedor del gráfico! */
-    margin-top: 15px; /* Espacio superior, si lo quieres */
-    margin-bottom: 15px; /* Espacio inferior, si lo quieres *
-
-
-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-    background-color: #2c3e50;
+.input-group input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 4px;
+}
+.input-group button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: var(--color-acento);
     color: white;
-    font-size: 0.8em;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+}
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+.btn-group button {
+    flex: 1 1 auto; /* Para que los botones se adapten al tamaño */
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--color-borde);
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.btn-group button.active {
+    background-color: var(--color-acento);
+    color: white;
 }
 
-/* Responsive Design (Básico) */
+/* 6. Estilos de la Lista de Noticias y Badges de Sentimiento */
+.news-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.noticia-item {
+    padding: 1rem;
+    background-color: #fafafa;
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+.noticia-item h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+.noticia-item p { font-size: 0.9rem; margin-bottom: 0.5rem; }
+.noticia-item small { color: #888; }
+.noticia-item a { color: var(--color-acento); text-decoration: none; }
+.noticia-item a:hover { text-decoration: underline; }
+.badge-muy-positivo, .badge-positivo, .badge-neutral, .badge-negativo, .badge-muy-negativo {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: white;
+}
+.badge-muy-positivo { background-color: #2ecc71; }
+.badge-positivo { background-color: #27ae60; }
+.badge-neutral { background-color: #f39c12; }
+.badge-negativo { background-color: #e74c3c; }
+.badge-muy-negativo { background-color: #c0392b; }
+
+/* 7. Estilos de los Gráficos de Mercado */
+.market-charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.market-chart-wrapper {
+    background-color: var(--color-card-fondo);
+    padding: var(--espaciado-medio);
+    border-radius: 8px;
+    box-shadow: var(--sombra-card);
+    height: 400px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 8. Estilos del Canvas */
+.chart-container, .market-chart-wrapper > div {
+    position: relative;
+    height: 300px;
+}
+
+/* 9. Responsive Design */
 @media (max-width: 768px) {
-    main {
-        grid-template-columns: 1fr; /* Una sola columna en móviles */
+    .top-row-content {
+        grid-template-columns: 1fr;
+    }
+    .main-container {
+        width: 95%;
     }
 }
